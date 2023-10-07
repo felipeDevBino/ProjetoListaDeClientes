@@ -1,60 +1,51 @@
 package ListaDeClientesA.pacotelc;
 
 public class DefineCliente extends Clientes {
-	
-	private String nome;
-	private String email;
-	private int idade;
-	private int telefone;
-	private int contador = 0;
-	
+
 	public void defineAtributos() {
-		
-		contador++;
-		
-		try {
+
+		for(int c = 0; c < CriaListaDeClientes.quantidadeDeClientes; c++) {
 			
-		System.out.println("\n========Cadastrar Novo Cliente " + contador + "========");
-		System.out.println("\nDigite o nome do(a) cliente:"); nome = scanner.nextLine();
-		System.out.println("Digite o email do(a) cliente:"); email = scanner.nextLine();
-		System.out.println("Digite a idade do(a) cliente:"); idade = Integer.parseInt(scanner.nextLine());
-		System.out.println("Digite o telefone do(a) cliente:"); telefone = Integer.parseInt(scanner.nextLine());
+			try {
+
+			System.out.println("\n========Cadastrar Novo Cliente " + c + "========");
+			System.out.println("\nDigite o nome do(a) cliente:"); nome[c] = scanner.nextLine();
+			System.out.println("Digite o email do(a) cliente:"); email[c] = scanner.nextLine();
+			System.out.println("Digite a idade do(a) cliente:"); idade[c] = Integer.parseInt(scanner.nextLine());
+			System.out.println("Digite o telefone do(a) cliente:"); telefone[c] = Integer.parseInt(scanner.nextLine());
 		
-			if(nome.isEmpty()) {
+			if(nome[c].isEmpty()) {
 				System.out.println("Nome/Email inválido!");
-				contador--;
+				c--;
 				defineAtributos();
-			}
-			if(email.isEmpty()) {
+
+			}else if(email[c].isEmpty()) {
 				System.out.println("Nome/Email inválido!");
-				contador--;
+				c--;		
 				defineAtributos();
-			}
-			if(idade < 18) {
+
+			}else if(idade[c] < 18) {
 				System.out.println("O cliente não tem a idade mínima requerida!");
-				contador--;
+				c--;
 				defineAtributos();
 			}
 			
-		}catch(NumberFormatException e) {
-			System.out.println("Tipo de caracter numérico inválido, procure utilizar números inteiros: (1, 10, 100)");
-			contador--;
-			defineAtributos();
-		}catch(NullPointerException d) {
-			System.out.println("Objeto nulo/inválido!");
-			contador--;
-			defineAtributos();
+			}catch(NumberFormatException e) {
+				System.out.println("Tipo de caracter numérico inválido, procure utilizar números inteiros: (1, 10, 100)");
+				c--;
+				defineAtributos();
+			}catch(NullPointerException d) {
+				System.out.println("Objeto nulo/inválido!");
+				c--;
+				defineAtributos();
+			}
+			}
 		}
-		
-	}
-	
-	public void cliente() { 	
+
+	public void cliente(CriaListaDeClientes listaDeClientes) { 	
+		super.defineAtributos(nome, email, idade, telefone, listaDeClientes);
 		defineAtributos();
-		super.defineNome(nome);
-		super.defineEmail(email);
-		super.defineTelefone(telefone);
-		super.defineIdade(idade);
-		super.imprimeCliente();
+		super.imprimeClienteCriado();
 	}
 
 }

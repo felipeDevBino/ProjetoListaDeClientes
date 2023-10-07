@@ -5,42 +5,38 @@ import java.util.Scanner;
 public abstract class Clientes {
 
 	public Scanner scanner = new Scanner(System.in);
-	private String nome;
-	private String email;
-	private int idade;
-	private int telefone;
-	private int contador = 0;
+	protected String nome[];
+	protected String email[];
+	protected int idade[];
+	protected int telefone[];
+
+	public void defineAtributos(String nome[], String email[], int idade[], int telefone[], CriaListaDeClientes listaDeClientes) {
+		this.nome = new String[CriaListaDeClientes.quantidadeDeClientes];
+		this.email = new String[CriaListaDeClientes.quantidadeDeClientes];
+		this.idade = new int[CriaListaDeClientes.quantidadeDeClientes];
+		this.telefone = new int[CriaListaDeClientes.quantidadeDeClientes];
+	}
 	
-	public void defineNome(String nome) {
-		this.nome = nome;
+
+	public void imprimeClienteCriado() {
+
+		for(int icc = 0; icc < CriaListaDeClientes.quantidadeDeClientes; icc++) {
+			System.out.println("\n========Novo Cliente " + icc + " Cadastrado========");
+			System.out.println("\nNome: " + nome[icc]);
+			System.out.println("Email: " + email[icc]);
+			System.out.println("Idade: " + idade[icc]);
+			System.out.println("Telefone: " + telefone[icc]);
+		}
+	}
+	
+	public void imprimeClienteDaLista(int posicaoNaLista) {
+
+		System.out.println("\n========Cliente " + posicaoNaLista + "========");
+		System.out.println("\nNome: " + nome[posicaoNaLista]);
+		System.out.println("Email: " + email[posicaoNaLista]);
+		System.out.println("Idade: " + idade[posicaoNaLista]);
+		System.out.println("Telefone: " + telefone[posicaoNaLista]);
 
 	}
-	
-	public void defineEmail(String email) {
-		this.email = email;
 
-	}
-	
-	public void defineIdade(int idade) {
-		this.idade = idade;
-		
-	}
-	
-	public void defineTelefone(int telefone) {
-		this.telefone = telefone;
-		
-	}
-
-	public void imprimeCliente() {
-		
-		contador++;
-		
-		System.out.println("\n========Novo Cliente " + contador + " Cadastrado========");
-		System.out.println("\nNome: " + nome);
-		System.out.println("Email: " + email);
-		System.out.println("Idade: " + idade);
-		System.out.println("Telefone: " + telefone);
-		
-	}
-	
 }
