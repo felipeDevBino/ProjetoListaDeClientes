@@ -42,8 +42,8 @@ public class DefineCliente extends Clientes {
 			}
 		}
 
-	public void cliente(CriaListaDeClientes listaDeClientes) { 	
-		super.defineAtributos(nome, email, idade, telefone, listaDeClientes);
+	public void cliente() { 	
+		super.defineAtributos();
 		defineAtributos();
 		super.imprimeClienteCriado();
 	}

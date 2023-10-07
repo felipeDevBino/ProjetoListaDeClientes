@@ -17,7 +17,7 @@ public class CriaListaDeClientes extends DefineCliente {
 			System.out.println("Tipo de caracter numérico inválido, procure utilizar números inteiros: (1, 10, 100)\n");
 			lista();
 		}
-		super.cliente(this);
+		super.cliente();
 		buscaNaLista();
 	}
 

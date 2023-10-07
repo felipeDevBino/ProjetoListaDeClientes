@@ -10,7 +10,7 @@ public abstract class Clientes {
 	protected int idade[];
 	protected int telefone[];
 
-	public void defineAtributos(String nome[], String email[], int idade[], int telefone[], CriaListaDeClientes listaDeClientes) {
+	public void defineAtributos() {
 		this.nome = new String[CriaListaDeClientes.quantidadeDeClientes];
 		this.email = new String[CriaListaDeClientes.quantidadeDeClientes];
 		this.idade = new int[CriaListaDeClientes.quantidadeDeClientes];
@@ -27,6 +27,7 @@ public abstract class Clientes {
 			System.out.println("Idade: " + idade[icc]);
 			System.out.println("Telefone: " + telefone[icc]);
 		}
+		
 	}
 	
 	public void imprimeClienteDaLista(int posicaoNaLista) {
