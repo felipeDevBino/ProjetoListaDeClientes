@@ -20,7 +20,7 @@ public abstract class Clientes {
 
 	public void imprimeClienteCriado() {
 
-		for(int icc = 0; icc < CriaListaDeClientes.quantidadeDeClientes; icc++) {
+		for(int icc = 0; icc < CriaListaDeClientes.quantidadeDeClientes - 1; icc++) {
 			System.out.println("\n========Novo Cliente " + icc + " Cadastrado========");
 			System.out.println("\nNome: " + nome[icc]);
 			System.out.println("Email: " + email[icc]);

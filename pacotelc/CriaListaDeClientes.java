@@ -24,12 +24,19 @@ public class CriaListaDeClientes extends DefineCliente {
 	public void buscaNaLista() {
 
 		try {
-			System.out.println("\nDigite o número da lista para ver o cliente específico:"); posicaoNaLista = Integer.parseInt(scanner.nextLine());
+			System.out.println("\nDigite o número da lista para ver o cliente específico (inicia em zero):"); posicaoNaLista = Integer.parseInt(scanner.nextLine());
 		}catch(NumberFormatException e) {
 			System.out.println("Tipo de caracter numérico inválido, procure utilizar números inteiros: (1, 10, 100)");
+			buscaNaLista();
+		}catch(ArrayIndexOutOfBoundsException e) {
+			System.out.println("Posição inválida ou inexistente!");
+			buscaNaLista();
+		}catch(Exception e) {
+			System.out.println("Posição inválida ou inexistente!");
+			buscaNaLista();
 		}
 
-		if(posicaoNaLista <= CriaListaDeClientes.quantidadeDeClientes) {
+		if(posicaoNaLista >= 0 && posicaoNaLista < quantidadeDeClientes) {
 			imprimeClienteDaLista(posicaoNaLista);	
 		}else {
 			System.out.println("Posição inválida!");
