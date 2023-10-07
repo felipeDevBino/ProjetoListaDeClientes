@@ -10,7 +10,7 @@ public abstract class Clientes {
 	protected int idade[];
 	protected int telefone[];
 
-	public void defineAtributos(String nome[], String email[], int idade[], int telefone[], CriaListaDeClientes listaDeClientes) {
+	public void defineAtributos() {
 		this.nome = new String[CriaListaDeClientes.quantidadeDeClientes];
 		this.email = new String[CriaListaDeClientes.quantidadeDeClientes];
 		this.idade = new int[CriaListaDeClientes.quantidadeDeClientes];
@@ -20,7 +20,7 @@ public abstract class Clientes {
 
 	public void imprimeClienteCriado() {
 
-		for(int icc = 0; icc < CriaListaDeClientes.quantidadeDeClientes; icc++) {
+		for(int icc = 0; icc < CriaListaDeClientes.quantidadeDeClientes - 1; icc++) {
 			System.out.println("\n========Novo Cliente " + icc + " Cadastrado========");
 			System.out.println("\nNome: " + nome[icc]);
 			System.out.println("Email: " + email[icc]);

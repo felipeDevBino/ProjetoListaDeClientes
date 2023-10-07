@@ -16,34 +16,31 @@ public class DefineCliente extends Clientes {
 		
 			if(nome[c].isEmpty()) {
 				System.out.println("Nome/Email inválido!");
-				c--;
 				defineAtributos();
 
 			}else if(email[c].isEmpty()) {
 				System.out.println("Nome/Email inválido!");
-				c--;		
 				defineAtributos();
 
 			}else if(idade[c] < 18) {
 				System.out.println("O cliente não tem a idade mínima requerida!");
-				c--;
 				defineAtributos();
 			}
 			
 			}catch(NumberFormatException e) {
 				System.out.println("Tipo de caracter numérico inválido, procure utilizar números inteiros: (1, 10, 100)");
-				c--;
 				defineAtributos();
 			}catch(NullPointerException d) {
 				System.out.println("Objeto nulo/inválido!");
-				c--;
 				defineAtributos();
 			}
-			}
+
 		}
 
-	public void cliente(CriaListaDeClientes listaDeClientes) { 	
-		super.defineAtributos(nome, email, idade, telefone, listaDeClientes);
+	}
+
+	public void cliente() { 	
+		super.defineAtributos();
 		defineAtributos();
 		super.imprimeClienteCriado();
 	}
