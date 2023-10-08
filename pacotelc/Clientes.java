@@ -16,11 +16,10 @@ public abstract class Clientes {
 		this.idade = new int[CriaListaDeClientes.quantidadeDeClientes];
 		this.telefone = new int[CriaListaDeClientes.quantidadeDeClientes];
 	}
-	
 
 	public void imprimeClienteCriado() {
 
-		for(int icc = 0; icc < CriaListaDeClientes.quantidadeDeClientes - 1; icc++) {
+		for(int icc = 0; icc < CriaListaDeClientes.quantidadeDeClientes; icc++) {
 			System.out.println("\n========Novo Cliente " + icc + " Cadastrado========");
 			System.out.println("\nNome: " + nome[icc]);
 			System.out.println("Email: " + email[icc]);
@@ -37,7 +36,6 @@ public abstract class Clientes {
 		System.out.println("Email: " + email[posicaoNaLista]);
 		System.out.println("Idade: " + idade[posicaoNaLista]);
 		System.out.println("Telefone: " + telefone[posicaoNaLista]);
-
 	}
-
+	
 }
