@@ -1,4 +1,6 @@
-Projeto Lista de Clientes
+# Projeto Lista de Clientes #
+
+## Objetivo: ##
 
 Este projeto foi feito como teste para funções simples do github em prática, trata-se de 
 um programa que pede para o usuário inserir a quantidade de clientes a serem adicionados
